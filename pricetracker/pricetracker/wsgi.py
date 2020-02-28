@@ -1,5 +1,5 @@
 """
-WSGI config for amazontracker project.
+WSGI config for pricetracker project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
