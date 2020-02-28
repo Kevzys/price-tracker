@@ -1,0 +1,29 @@
+{% extends "leads/base.html" %}
+{% block title %}
+My List
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>Your List</h1>
+    
+    <a href="/create_list"></a>
+
+    {% for list in user.productlist.all %}
+        <h4>list.name</h4>
+        <a href="/create_item/{{list.id}}">Add item to List</a>
+        <a href="/remove_list/{{list.id}}">Delete list</a>
+
+        {% for p in list.product_set.all %}
+              <h5>{{p.name}}</h5>
+              <p>${{p.price}}</p>
+              <a href="/remove_item/{{list.id}}/{{p.name}}">Remove Stock</a>
+
+        {% endfor %}
+    {%  endfor %}
+
+
+    {% else %}
+{% endif %}
+{% endblock %}
+
