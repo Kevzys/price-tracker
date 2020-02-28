@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Amazon Price Tracker</h1>
+    <h2>An easy way to keep tabs on when the products you want go on sale.</h2>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.get_username }} </p>
+    {% else %}
+        <a href="/login">Not logged in, Login</a>
+    {% endif %}
+
+
+</body>
+</html>

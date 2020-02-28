@@ -1,0 +1,14 @@
+{% extends 'leads/base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+
+    <h1>Add Stock</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit">Add</button>
+    </form>
+    {{ valid }}
+  {% endif %}
+{% endblock %}
